@@ -1,0 +1,25 @@
+s=input()
+n=len(s)
+re=[]
+temp=[]
+def find(i,n):
+    # check wheather index is greater than n value or not
+    if i>n-1:
+        # appending resultant list with slicing(so that the data in the output list is not changed)
+        # always list variables are global in python
+        re.append(temp[:])
+        return
+    for j in range(i,n):
+        d=s[i:j+1]
+        #checking pallindrome or not
+        if d==d[::-1]:
+            temp.append(d)
+            # call the the function with the index next to pallindrome string
+            find(j+1,n)
+            # removing the pallindromic string after completing the function call
+            temp.pop()
+            
+#calling fucntion from 0 index        
+find(0,n)
+#print the resultant list
+print(re)

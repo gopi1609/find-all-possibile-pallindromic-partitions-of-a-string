@@ -1,0 +1,1 @@
+# find-all-possibile-pallindromic-partitions-of-a-string
